@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card bg-secondary p-4 text-center">
+            <h3>🚨 Traffic Violation Receipt</h3>
+            <hr>
+            <p><strong>Vehicle:</strong> {{ violation.vehicle_number }}</p>
+            <p><strong>Violation:</strong> {{ violation.violation_type }}</p>
+            <p><strong>Location:</strong> {{ violation.location }}</p>
+            <p><strong>Date:</strong> {{ violation.date.strftime('%d-%m-%Y %H:%M') }}</p>
+            <p><strong>Fine:</strong> ₹{{ violation.fine_amount }}</p>
+            
+            <h4 class="mt-4">Payment Status</h4>
+            <h2>
+                <span class="badge {% if violation.status == 'Paid' %}bg-success{% else %}bg-warning text-dark{% endif %} fs-1">
+                    {{ violation.status }}
+                </span>
+            </h2>
+            
+            {% if violation.qr_code_path %}
+            <img src="/{{ violation.qr_code_path }}" class="img-fluid mt-4" style="max-width:300px;" alt="QR Code">
+            {% endif %}
+            
+            <p class="text-muted mt-4">Scan this QR to check status</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

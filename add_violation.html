@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mb-4">📝 Log New Violation</h2>
+<div class="card bg-secondary p-4">
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                {{ form.vehicle_number.label(class="form-label") }}
+                {{ form.vehicle_number(class="form-control bg-dark text-light") }}
+            </div>
+            <div class="col-md-6 mb-3">
+                {{ form.violation_type.label(class="form-label") }}
+                {{ form.violation_type(class="form-select bg-dark text-light") }}
+            </div>
+        </div>
+        <div class="mb-3">
+            {{ form.location.label(class="form-label") }}
+            {{ form.location(class="form-control bg-dark text-light") }}
+        </div>
+        <div class="mb-3">
+            {{ form.fine_amount.label(class="form-label") }}
+            {{ form.fine_amount(class="form-control bg-dark text-light") }}
+        </div>
+        {{ form.submit(class="btn btn-danger w-100") }}
+    </form>
+</div>
+{% endblock %}

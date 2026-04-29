@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- HERO -->
+<div class="text-center py-5">
+
+    <h1 class="display-4 fw-bold text-danger mb-3">
+        🚦 Smart Traffic Violation Logger
+    </h1>
+
+    <p class="lead mb-4">
+        Digital Chalan System for Traffic Police 🚔
+    </p>
+
+    <!-- REMOVE if navbar already has button -->
+    <!-- <a href="{{ url_for('main.add_violation') }}" class="btn btn-danger btn-lg">
+        Log New Violation
+    </a> -->
+
+</div>
+
+<!-- FEATURES -->
+<div class="container mt-4">
+
+    <div class="row text-center">
+
+        <div class="col-md-4 mb-4">
+            <div class="card p-4 bg-dark">
+                <h4>🚗 Easy Entry</h4>
+                <p>Quickly add violations with simple form.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card p-4 bg-dark">
+                <h4>📊 Track History</h4>
+                <p>View and filter all violation records.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card p-4 bg-dark">
+                <h4>📱 QR System</h4>
+                <p>Scan QR to check payment status.</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- EXTRA SECTION -->
+<div class="container text-center mt-5 mb-5">
+
+    <div class="card p-4 bg-dark">
+        <h4>🚔 Why This System?</h4>
+        <p>
+            Helps traffic police manage violations digitally,
+            reduce paperwork, and improve efficiency.
+        </p>
+    </div>
+
+</div>
+
+{% endblock %}
